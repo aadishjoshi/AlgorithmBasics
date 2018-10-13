@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.lang.*;
 class heapInsert{
 	static final int MAX = 100;
 	static int [] a = new int[MAX];
@@ -23,6 +23,48 @@ class heapInsert{
 		
 	}
 
+	public static void delete(){
+		int l = a[0];
+		int minChild, minChildIndex; 
+		int temp;
+		int i = 1;
+		if(l == 1){
+			return;
+		}else{
+			
+			a[0] -= 1;
+			
+			a[1] = a[l];
+			
+			a[l] = 0;
+			int ptr = 1;
+			while(i < l){
+				i = i*2;
+				int child1 = (ptr * 2);
+				int child2 = (ptr * 2) + 1;
+				
+				if(a[child1] > a[child2]){
+					minChildIndex = child2;
+					minChild = a[child2];
+				}else{
+					minChildIndex = child1;
+					minChild = a[child1];
+				}
+
+				if(minChildIndex >= l){
+					break;
+				}
+
+				if(a[ptr] > minChild){
+					temp = a[ptr];
+					a[ptr] = minChild;
+					a[minChildIndex] = temp;
+					ptr = minChildIndex;
+				}
+			}
+		}
+	}
+
 	public static void main(String args[]){
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter numbers to heap. -1 to exit");
@@ -43,8 +85,14 @@ class heapInsert{
 		}while(true);
 
 		for(int j=0;j<i; j++){
-				System.out.println("\t"+a[j]);
-			}
+			System.out.println("\t"+a[j]);
+		}
 
+		delete();
+
+		System.out.println("*** After Deletion ***");
+		for(int j=0;j<a[0]+1; j++){
+			System.out.println("\t"+a[j]);
+		}
 	}
 }

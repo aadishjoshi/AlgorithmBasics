@@ -1,0 +1,66 @@
+/**************************************************************************************************
+	Algorithms and Asymptotic Notations:
+	Last Updated :- Oct 26, 2018.
+**************************************************************************************************/
+Algorithms:- Mathematical method to solve problems.
+
+Limit method to find the upper and lower bound.
+
+bigOh 		:-  f(n) = O[g(n)] if f(n) <= c1. g(n) for n>= n0;
+LowerUpperBound :-  f(n) = SEGMA[g(n)] if f(n) >= c. g(n) for n>= n0;
+TightBound	:-  f(n) = Theta[g(n)] if c1.g(n) <= f(n) <= c1. g(n) for n>= n0;
+littleOh	:-  f(n) = o[g(n)] if f(n) < c1. g(n) for n>= n0;
+littleSigma	:-  f(n) = segma[g(n)] if f(n) > c1. g(n) for n>= n0;
+
+********************************************************************************************
+Limit method:
+********************************************************************************************
+k = lim (n->inf) [f(n)/g(n)]
+
+k = O[g(n)] if k!= inf;
+k = SEGMA[g(n)] if k!=0;
+k = Theta[g(n)] 0 <k != inf;
+k = o[g(n)] k =0;
+k = segma[g(n)] k = inf;
+
+LISP Notation: M = log(M) i.e. M = log(log(log ...(M))...)) iterated log.
+
+********************************************************************************************
+Masters Method:-
+********************************************************************************************
+T(n) = a. T[n/b] + c. (n^k)
+Prove by substituting n = n/b for i steps.
+
+if [a/(b^k)] > 1 :- Theta[n^(log a/logb)].
+if [a/(b^k)] = 1 :- Theta[{n^(log a/logb)}.log(n)].
+if [a/(b^k)] < 1 :- Theta[n^(k)].
+
+********************************************************************************************
+Important recursions:
+********************************************************************************************
+Merge Sort:- T[n] = 2T[n/2] + n; // masters them
+Power Theorem:- T[n] = T[n/2] + 1; //masters them
+Karatsuba Implications:- T[n] = 3T[n/2] + n; // masters them
+Median Theorem:- T[n] <= T[n/5] + T[7n/10] +n; //solve by substitution
+
+********************************************************************************************
+Other Methods:
+********************************************************************************************
+Interal method;
+Substitution Method;
+Recursive tree method;
+Amortised cost;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

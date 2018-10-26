@@ -1,0 +1,15 @@
+/**************************************************************************************************
+	Divide and Conquer:
+	Last Updated :- Oct 26, 2018.
+**************************************************************************************************/
+
+If problem is big, divide it into smaller problems and then combine it to make a solution
+
+Problems on Divide and Conquer :-
+
+1) Binary search
+2) Finding Maximum and Minimum
+3) Merge Sort
+4) Quick Sort
+5) Strassen's Matrix Multiplication
+6) Maximum subarray sum
